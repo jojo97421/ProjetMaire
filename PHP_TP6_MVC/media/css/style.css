@@ -1,0 +1,170 @@
+/* Style page Web */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* Remise à zéro du rôle d'affichage HTML5 pour les anciens navigateurs */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* Mettre en évidence les insertions d'une manière ou d'une autre ! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Début de nos styles*/
+
+body {
+	font: 16px/1.4em 'PT Sans', sans-serif;;
+	color: #1c1c1c;
+}
+
+p,
+ul {
+	margin: 0 0 1.5em;
+}
+
+ul {
+	list-style: disc;
+	padding: 0 0 0 20px;
+}
+
+a {
+	color: #1D745A;
+}
+
+h1 {
+	color: #000;
+}
+
+h2 {
+	font-family: 'PT Serif', serif;
+	font-size: 32px;
+	line-height: 1.4em;
+	margin: 0 0 .4em;
+	font-weight: bolder;
+}
+
+h3 {
+	font-family: Tahoma, sans-serif;
+	font-size: 24px;
+	line-height: 1.0em;
+	margin: 0 0 .4em;
+	font-weight: bold;
+	color:green;
+}
+
+/* Layout  : Mise en page*/
+
+.wrapper {
+	position: relative;
+	width: 55%;
+	margin: auto;
+}
+
+article {
+	border-bottom: 1px solid #d8d8d8;
+	padding: 10px 20px 0 20px;
+	margin: 10px 0;
+}
+
+
+/* Header */
+header {
+	background: #1c1c1c27;
+	padding: 15px 20px;
+}
+header:before,
+header:after {
+	content:"";
+	display:table;
+}
+
+header:after {
+	clear:both;
+}
+
+
+h1.logo a {
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 20px;
+	line-height: 22px;
+	float: left;
+	letter-spacing: 0.2em;
+}
+
+/* Contenu */
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+	background-color: #dddddd;
+  }
+
+.droite {
+	text-align: right;
+} 
+
+	
+
+/* Footer */
+footer {
+	font-family: 'PT Serif', serif;
+	font-style: italic;
+	text-align: center;
+	font-size: 14px;
+}
+
