@@ -6,7 +6,7 @@
     $contenu .= "<article>";
     $contenu .= "<h2>Liste des Tuteurs</h2>";
     $contenu .= "<article>";
-    $contenu .= "<table>
+    $contenu .= "<table id='trier'>
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -48,7 +48,36 @@
     $contenu .= "</article>";
     $contenu .= "</div>";
     $contenu .="<form name='perso' method = 'post' action=''>";
-    $contenu .="<input type ='submit' name='Rechercher' value='Recherhcer'/>";
     include "template.php";
 
 ?>
+<link href="https://cdn.datatables.net/v/bs4/jqc-1.12.4/dt-1.13.4/sc-2.1.1/datatables.min.css" rel="stylesheet"/>
+ 
+ <script src="https://cdn.datatables.net/v/bs4/jqc-1.12.4/dt-1.13.4/sc-2.1.1/datatables.min.js"></script>
+
+ <script>
+    // Initialisation de DataTables sur la table avec l'id "tableau_clients"
+    $("#trier").dataTable({
+
+        "pageLength":5,
+        "responsive": true,
+        "lengthChange":false,
+        "language": {
+            "emptyTable": "Aucun élément trouvé ",
+            "info": "",
+            "infoEmpty": "Aucun donnée disponible",
+            "loadingRecords": "Chargement...",
+            "processing": "En cours...",
+            "search":   "Rechercher:",
+            "searchPlaceholder": "Entrez une donnée à rechercher",
+            "zeroRecords": "L'élément recherché n'existe pas",
+            "paginate":{
+                "first": "Premier",
+                "last":  "Dernier",
+                "next":  "Suivant",
+                "previous": "Précédent"
+            }
+        }
+
+    });
+</script>

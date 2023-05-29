@@ -125,7 +125,12 @@
 
                     case 'Clientperso':
                          $clients = $this->modeleClient->getClientPerso();
+                         $clients = $this->modeleClient->Cookie();
                          include 'vue/vueClientperso.php';
+                         break;
+
+                    case 'accepter':
+                         $clients = $this->modeleClient->Accepter($id);
                          break;
                          
                     default:

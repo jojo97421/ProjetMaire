@@ -1,10 +1,10 @@
 <?php
 require_once("modele/client.php");
-$titre = "Stage Lister";
+$titre = "Liste des demandes";
 $clients = $this->modeleClient->getClientperso();
 $contenu = "<div>";
 $contenu .= "<article>";
-$contenu .= "<h2>Liste des Stages</h2>";
+$contenu .= "<h2>Vos demandes</h2>";
 $contenu .= "<article>";
 $contenu .= "<table>
                 <thead>
@@ -37,22 +37,17 @@ foreach ($clients as $cle => $ligne) {
     $contenu .= "<td>" . $client->getFin() . "</td>";
     $contenu .= "<td>" . $client->getSection() . "</td>";
     $contenu .= "<td>
-                        <a title='Détails' href='?action=editer&val=" . $client->getId() . "'>&#128270</a>
-                        | 
-                        <a title='Supprimer' href='?action=supprimer&val=" . $client->getId() . "'>&#128465;</a>
-                        | 
-                        <a title='Modifier' href='?action=modifier&val=" . $client->getId() . "'>&#128271;</a>
+                        <a title='Détails' href='?action=accepter&val=" . $client->getId() . "'>&#x2705;</a> 
+                        <a title='Supprimer' href='?action=supprimer&val=" . $client->getId() . "'>&#10060;</a>
                     </td></tr>";
 }
 $contenu .= "</tbody></table>";
-$contenu .= "<br><a title='Ajouter' href='?action=ajouter&val=" . $client->getId() . "'>Ajouter &#8862;</a>";
+
 $contenu .= "<br><br>";
 $contenu .= "<a title='Modifier' href='../connexion/'>Retour au compte &#9884;</a> <br>";
 // $contenu .="<br><a title='Personalisé' href='?action=perso&val=".$client->getId()."'>Requète personalisé &#8862;</a>";
 $contenu .= "<br><br>";
-$contenu .= "<a title='AjouterTuteurs'href='?action=affichertuteurs&val='>Afficher Tuteurs </a>";
 $contenu .= "</article>";
-$contenu .= "</div>";
 include "template.php";
 
 ?>

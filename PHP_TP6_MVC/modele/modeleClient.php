@@ -122,13 +122,6 @@ class modeleClient extends Database
         }
     }
 
-    /* public function persorequete($client){
-    $sql ="$client['perso']";
-    $rqt->execute(array($client['perso']));
-    $rqt->closeCursor();
-    header('Location: ../PHP_TP6_MVC');
-    exit();
-    }*/
 
     public function getTuteurs()
     {
@@ -269,14 +262,32 @@ class modeleClient extends Database
     }
 
     public function getClientPerso()
-    {
-        $sql = "SELECT * FROM demande WHERE lien = 2;";
+    { 
+        $sql = "SELECT * FROM demande WHERE lien = '".$_COOKIE["IdUtilisateur"]."' AND accepter != 'Oui';";
         $rqt = $this->cnx->prepare($sql);
         $rqt->execute();
         $clients = $rqt->fetchAll(PDO::FETCH_ASSOC);
         $rqt->closeCursor(); // Achève le traitement de la requête
         return $clients;
 
+    }
+
+    public function Accepter($id){
+        $sql = "UPDATE demande SET accepter = 'Oui' WHERE id = ? ";
+        $rqt = $this->cnx->prepare($sql);
+            $rqt->execute(array($id));
+            $rqt->closeCursor();
+            header('Location: ../PHP_TP6_MVC/?action=Clientperso&val=');
+    }
+    
+    public function Cookie(){
+        $sql = "SELECT id FROM utilisateurs WHERE pseudo = '".$_SESSION['username']."'";
+        $rqt = $this->cnx->prepare($sql);
+        $rqt->execute();
+        $iduser = $rqt->fetch();
+        $rqt->closeCursor();
+		$iduser = $iduser['id'];
+		setcookie('IdUtilisateur',"$iduser", time() + 86400, 'http://www/PHP_TP6_MVC/?action=Clientperso&val=');
     }
 }
 ?>
