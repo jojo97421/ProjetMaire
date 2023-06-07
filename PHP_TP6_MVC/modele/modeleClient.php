@@ -272,6 +272,16 @@ class modeleClient extends Database
 
     }
 
+    public function DeleteClientPerso($id)
+    {
+        $sql = "UPDATE demande SET lien = Null  WHERE id = ?;";
+        $rqt = $this->cnx->prepare($sql);
+        $rqt->execute(array($id));
+        $rqt->closeCursor(); // Ferme le curseur, permettant à la requête d'être de nouveau exécutée 
+        header('Location: ../PHP_TP6_MVC/?action=affichertuteurs&val=');
+        exit();
+    }
+
     public function Accepter($id){
         $sql = "UPDATE demande SET accepter = 'Oui' WHERE id = ? ";
         $rqt = $this->cnx->prepare($sql);

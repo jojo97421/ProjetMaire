@@ -38,7 +38,7 @@ foreach ($clients as $cle => $ligne) {
     $contenu .= "<td>" . $client->getSection() . "</td>";
     $contenu .= "<td>
                         <a title='Détails' href='?action=accepter&val=" . $client->getId() . "'>&#x2705;</a> 
-                        <a title='Supprimer' href='?action=supprimer&val=" . $client->getId() . "'>&#10060;</a>
+                        <a title='Supprimer' href='?action=supprimerPerso&val=" . $client->getId() . "'>&#10060;</a>
                     </td></tr>";
 }
 $contenu .= "</tbody></table>";

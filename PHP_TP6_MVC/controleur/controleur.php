@@ -124,9 +124,13 @@
                     break;
 
                     case 'Clientperso':
-                         $clients = $this->modeleClient->getClientPerso();
                          $clients = $this->modeleClient->Cookie();
+                         $clients = $this->modeleClient->getClientPerso();
                          include 'vue/vueClientperso.php';
+                         break;
+
+                    case 'supprimerPerso':
+                         $clients = $this->modeleClient->DeleteClientPerso($id);
                          break;
 
                     case 'accepter':
